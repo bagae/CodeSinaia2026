@@ -2,7 +2,7 @@ import random
 import matplotlib.pyplot as plt
 from point import Point
 
-N_POINTS = 100
+N_POINTS = int(input("Number of points: "))
 X_RANGE = {"minX": -400, "maxX": 600}
 Y_RANGE = {"minY": -200, "maxY": 300}
 
