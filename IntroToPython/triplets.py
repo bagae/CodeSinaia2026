@@ -59,7 +59,7 @@ def print_triplets(nums):
                     count_triplets += 1
     return count_triplets
 
-def count_triplets(nums):
+def total_triplets(nums):
     """Return the number of distinct index triplets that can be formed from nums.
     Args:
         nums: List of values; equal values at different indexes are allowed.
@@ -67,7 +67,14 @@ def count_triplets(nums):
         The combinations count C(n, 3), where n is len(nums).
     """
     n = len(nums)
-    return n * (n-1) * (n-2) / 6
+
+    def multiply3(num):
+        """Return num * (num - 1) * (num - 2).
+        This is the numerator used when computing C(n, 3).
+        """
+        return num * (num-1) * (num-2)
+    
+    return multiply3(n) / 6
 
 if __name__ == "__main__":
     nums = []
@@ -75,10 +82,12 @@ if __name__ == "__main__":
         nums.append(random.randint(MIN_VAL, MAX_VAL))
 
     print("---- Numbers ----")
-    print(nums)    
-    total_triplets = count_triplets(nums)
+    print(nums)
+
+    # examble of python handing automatically naming ambiguities
+    total_triplets = total_triplets(nums)
+
     print("---- Zero-sum triplets ----")
     zero_triplets = print_triplets(nums)
     zero_pct = int(zero_triplets / total_triplets * 10000) / 100
     print(f"---- Zero-sum triplets: {zero_triplets} = {zero_pct}% of {total_triplets}")
-
