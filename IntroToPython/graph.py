@@ -32,10 +32,9 @@ def write_points(points, filename):
     # Open the output file in text mode and overwrite existing content.
     f = open(filename, "w", encoding="utf-8", newline="")
     # Write TSV header expected by spreadsheet tools.
-    f.write("Name\tX\tY\n")
     for p in points:
         # Write one point per line as: Name TAB X TAB Y.
-        f.write(f"{p._name}\t{p._x}\t{p._y}\n")
+        f.write(f"{p}\n")
     # Always close the file handle after writing.
     f.close()
 
