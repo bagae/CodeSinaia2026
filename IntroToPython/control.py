@@ -80,8 +80,8 @@ if __name__ == "__main__":
     for i in range(len(points)-1, -1, -2):
         print(f"{i:3d}: {points[i]}")
 
-    print(f"-------- Race all {len(points)} points towards the origin ---------")
-    # rotate through each point in the list moving each a little closer towrads origin, until one reaches it.
+    print(f"-------- 'Race' all {len(points)} points towards the origin ---------")
+    # rotate through each point in the list moving each a little closer towards the origin, until one reaches it.
     # the point reaching the origin is removed from the set
     while True:
         point = points.pop(0)
@@ -90,7 +90,7 @@ if __name__ == "__main__":
             break
         points.append(point)
 
-    print(f"-------- After the race, extract the {NPOINTS_AFAR} points fartherest away --------")
+    print(f"-------- After the 'race', extract the {NPOINTS_AFAR} points fartherest away --------")
     maxPoints = get_points_afar(points, NPOINTS_AFAR)
     print(*maxPoints, sep="\n")
 
