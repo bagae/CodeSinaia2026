@@ -347,4 +347,3 @@ while True:
     pass
     #TODO: accepta o conexiune si saleaza conexiunea si adresa. Creaza un print unde vei scrie cu ce adresa s a efectuat conexiunea
     #TODO: Creaza un thread care are target functia get_msg, args conn si este un daemon. Porneste thread ul
- pass
